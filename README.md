@@ -2,6 +2,43 @@
 
 **AICB-P1 · Phase 1 · Ngày 14 trong 15 · K4**
 
+## Kết quả bài làm cá nhân
+
+Evaluation core và cả hai bonus đã hoàn thành. Provided suite: **42 passed**;
+thêm 4 edge-case tests, toàn suite **46 passed**. Golden dataset **PASS**, đủ
+20 QA (5/7/5/3) và phủ 10/10 tài liệu. Baseline RAG thật đạt **55% pass rate**;
+đây là kết quả đo, không phải cam kết chất lượng production.
+
+Generator: `gpt-4o-mini`, top-k 5. Judge độc lập: `gpt-5.6-luna` cho rubric,
+RAGAS và DeepEval. Embedding: `text-embedding-3-small`. RAGAS 0.4.3 và DeepEval
+4.1.5 đã ghi 160 evaluation outcomes; 157 numeric scores, 3 RAGAS metrics của
+A01 là N/A vì trace không có retrieved context. Errors nguyên gốc được giữ lại.
+
+- [Worksheet hoàn chỉnh](exercises.md): benchmark, rubric và hai bonus.
+- [Reflection](reflection.md): ba 5 Whys, clusters, improvement log và CI/CD strategy.
+- [Artifacts](artifacts/): baseline answers, core benchmark, framework comparison,
+  independent rubric judge và reranking measurements.
+
+Tái lập bằng Python 3.12:
+
+```bash
+uv pip sync --python .venv/bin/python requirements.lock
+.venv/bin/pytest tests/ -v
+.venv/bin/python validate_golden_dataset.py
+.venv/bin/python verify_submission.py
+```
+
+Để chạy API experiment mới, cấu hình `.env` từ `.env.example`, sau đó chạy
+`domain_assistant.py`, `evaluate_answers.py`, `run_bonus.py` và
+`compare_frameworks.py`. Giữ baseline đã commit; dùng output path khác cho
+comparison nếu inputs thay đổi. `JUDGE_MODEL=gpt-5.6-luna`; không tự fallback
+model. Scripts gọi Responses API để hỗ trợ structured output của judge.
+Core overlap evaluation không gọi LLM. CI chạy offline, không cần API key.
+
+Dependency lock ghi toàn bộ phiên bản; pin LangChain 0.3 để tương thích imports
+của RAGAS 0.4.3. Reflection là bản phân tích evidence cần người nộp review,
+hiểu và tự giải thích theo RULES trước khi nộp.
+
 Lab này là bài **AI Evaluation**. Bạn sẽ hoàn thiện evaluation core trong `template.py`, xây dựng một golden dataset 20 câu, chạy một hệ thống RAG thật trên corpus **OrbitTech Store Customer Support**, rồi phân tích kết quả benchmark.
 
 > Hệ thống RAG trong `domain_assistant.py` là **system under evaluation**. Nó sinh câu trả lời; `template.py` là **evaluation engine** chấm các câu trả lời đó. Hai phần có vai trò hoàn toàn độc lập.
