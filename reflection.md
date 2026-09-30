@@ -1,7 +1,7 @@
 # Day 14 — Reflection
 ## Evaluation Report & Failure Analysis
 
-Báo cáo dùng run thật từ `artifacts/actual_answers.json`, `benchmark_results.json`, `rubric_judge.json` và `reranking_results.json`. Generator `gpt-4o-mini`, top-k 5; independent judge `gpt-5.6-luna`. Không sửa baseline để tối ưu scores. Đây là phân tích bằng chứng, không phải tuyên bố đã thử các proposed fixes.
+Bài đánh giá sử dụng kết quả chạy thực tế trong `artifacts/actual_answers.json`, `benchmark_results.json`, `rubric_judge.json` và `reranking_results.json`. Hệ thống RAG dùng `gpt-4o-mini` với top-k 5; model chấm điểm độc lập là `gpt-5.6-luna`. Baseline được giữ nguyên để nhìn rõ những điểm yếu của hệ thống. Các hướng cải thiện bên dưới là đề xuất cho vòng thử nghiệm tiếp theo, chưa phải những thay đổi đã được kiểm chứng.
 
 ## 1. Benchmark Results Summary
 
@@ -186,10 +186,12 @@ Reranking cùng chunks giữ recall nhưng precision theo expected có thể gi�
 
 ## 7. Final Reflection
 
-Điều trái dự đoán: A02 có evidence bảo mật đúng và refusal an toàn lại nằm thấp nhất theo overlap; E04 có answer rất tự tin nhưng missing paragraph durations. A03 còn đáng lo hơn một simple refusal: model từ chối bypass nhưng nhận premise rằng OrbitPay disable device, trái source.
+Điểm đáng chú ý nhất là câu trả lời có điểm thấp chưa chắc đã sai hoàn toàn, còn câu trả lời nghe thuyết phục chưa chắc đã đúng. A02 được cung cấp đúng tài liệu bảo mật và từ chối yêu cầu nguy hiểm, nhưng vẫn có điểm tổng thấp nhất vì câu trả lời quá ngắn và không trùng nhiều từ với đáp án chuẩn. Ngược lại, E04 trả lời rất chắc chắn về bảo hành dù không lấy được đoạn tài liệu chứa thời hạn cho từng nhóm sản phẩm. A03 cho thấy một lỗi dễ bị bỏ qua hơn: model từ chối hướng dẫn vượt khóa, nhưng lại mặc nhiên thừa nhận rằng OrbitPay có thể khóa thiết bị từ xa, trái với chính sách trong tài liệu.
 
-Word overlap không hiểu synonyms, negation, logical conditions, dates hay refusal appropriateness. Shared tokens có thể cho score cao dù ý nghĩa sai; correct paraphrase có thể thấp. Production cần claim entailment/contradiction, reference correctness, attack-type safety evaluation và human calibration. RAGAS/DeepEval bổ sung semantic evidence nhưng vẫn dùng LLM judge, có variance/bias và khác metric definitions.
+Những trường hợp này cho thấy không nên dùng mức độ trùng từ làm kết luận cuối cùng về chất lượng câu trả lời. Cách đo này không phân biệt tốt từ đồng nghĩa, phủ định, điều kiện áp dụng hay một lời từ chối có phù hợp hay không. Hai câu có nhiều từ giống nhau vẫn có thể mang ý nghĩa trái ngược; một câu diễn đạt đúng bằng cách khác lại có thể bị chấm thấp. Khi kiểm tra lỗi, cần đọc từng nhận định trong câu trả lời và đối chiếu với đoạn tài liệu thực sự được truy xuất, thay vì chỉ nhìn điểm trung bình.
 
-Generator và judge khác model giúp hạn chế self-preference; vẫn cần blind identity, counterbalanced tests và human holdout. Raw rubric scores trong artifact là continuous 0..1 theo code contract, anchors 1–5 trong worksheet để người chấm hiểu mức độ. Không tuyên bố human validation đã diễn ra khi chưa có human labels.
+RAGAS và DeepEval giúp bổ sung góc nhìn về ngữ nghĩa, nhưng cũng không phải đáp án tuyệt đối. Hai framework có định nghĩa metric khác nhau và vẫn phụ thuộc vào LLM judge, nên kết quả có thể khác nhau hoặc chịu ảnh hưởng của thiên lệch. Vì vậy, các trường hợp bất đồng lớn cần được kiểm tra trực tiếp; không nên chọn framework chỉ vì nó cho điểm cao hơn.
 
-Người nộp cần đọc và chỉnh reflection theo cách diễn đạt của mình, hiểu các 5 Whys và giải thích mọi quyết định khi coach vấn đáp. Báo cáo này ghi số liệu/evidence thật, không thay vai trò review và trách nhiệm cá nhân theo RULES.
+Dùng model chấm khác model sinh câu trả lời giúp hạn chế thiên lệch ưu tiên câu trả lời của chính mình, nhưng chưa đủ để bảo đảm đánh giá khách quan. Vòng đánh giá tiếp theo cần ẩn danh tính model, đảo thứ tự câu trả lời khi so sánh và có một tập nhãn do người chấm độc lập đánh giá. Phần này hiện chưa có nhãn đối chiếu của con người, nên chưa thể kết luận judge đã được hiệu chỉnh tốt. Điểm rubric lưu trong artifact dùng thang liên tục 0–1 theo interface của code; các mốc 1–5 trong worksheet dùng để mô tả từng mức chất lượng.
+
+Nếu làm vòng cải thiện tiếp theo, ưu tiên đầu tiên là sửa cách xử lý tiền đề sai như A03 và bảo đảm truy xuất đúng chính sách bảo hành như E04. Với A02, cần giữ khả năng từ chối an toàn nhưng bổ sung lời giải thích ngắn và hướng hỗ trợ phù hợp. Bonus reranking cũng cho thấy giới hạn rõ ràng: đổi thứ tự các đoạn đã lấy được không thể bổ sung đoạn bị bỏ sót. Kết luận quan trọng của bài lab là đánh giá không chỉ để có một con số đẹp, mà để xác định lỗi nằm ở đâu, chọn thay đổi phù hợp và kiểm tra lại xem thay đổi đó có thực sự giúp hệ thống tốt hơn hay không.
