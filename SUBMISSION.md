@@ -49,11 +49,12 @@ Hãy chạy các kiểm tra sau và tích chọn đầy đủ trước khi nộp
 
 - [x] Repository đã được đặt đúng tên chuẩn: `K4-L3A-DAY14-TranNguyenTienDuc-2A202602871-AIEvaluation`.
 - [x] Chạy `python validate_golden_dataset.py` báo `PASS`.
-- [x] Toàn bộ required tests và bonus pass: 42 provided tests, thêm 4 edge-case tests; tổng 46 passed.
+- [x] Toàn bộ required tests và bonus pass: 42 provided tests, 4 core edge-case tests và 10 semantic pipeline tests; tổng 56 passed.
 - [x] `golden_dataset.json` đủ 20 QA (5 Easy + 7 Medium + 5 Hard + 3 Adversarial).
 - [x] Đã kiểm tra đủ 20 actual answers và retrieval traces từ RAG thật.
 - [x] `exercises.md` hoàn chỉnh: năm metrics, ba cases thấp nhất, rubric 1–5, edge cases và cả hai bonus.
 - [x] `reflection.md` có ba 5 Whys analyses, failure taxonomy, improvement log và regression strategy.
+- [x] Chấm lại đủ 20 câu bằng LLM-as-a-Judge: rubric nguyên 1–5, reasons/citations, checkpoint/resume; báo cáo riêng, giữ nguyên core và các artifacts cũ.
 - [x] `solution/solution.py` đồng bộ byte-for-byte với `template.py`.
 - [x] Không commit `.env`, API key hoặc dữ liệu nhạy cảm lên GitHub.
 

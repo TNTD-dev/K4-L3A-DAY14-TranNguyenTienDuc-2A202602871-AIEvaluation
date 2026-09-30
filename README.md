@@ -5,7 +5,7 @@
 ## Kết quả bài làm cá nhân
 
 Evaluation core và cả hai bonus đã hoàn thành. Provided suite: **42 passed**;
-thêm 4 edge-case tests, toàn suite **46 passed**. Golden dataset **PASS**, đủ
+thêm 4 core edge-case tests và 10 semantic pipeline tests, toàn suite **56 passed**. Golden dataset **PASS**, đủ
 20 QA (5/7/5/3) và phủ 10/10 tài liệu. Baseline RAG thật đạt **55% pass rate**;
 đây là kết quả đo, không phải cam kết chất lượng production.
 
@@ -14,8 +14,18 @@ RAGAS và DeepEval. Embedding: `text-embedding-3-small`. RAGAS 0.4.3 và DeepEva
 4.1.5 đã ghi 160 evaluation outcomes; 157 numeric scores, 3 RAGAS metrics của
 A01 là N/A vì trace không có retrieved context. Errors nguyên gốc được giữ lại.
 
+Đã chấm lại cùng 20 frozen answers bằng rubric ngữ nghĩa **1–5**, có lý do từng
+tiêu chí và quotations được kiểm tra. Mean correctness **4.20/5**, completeness
+**3.80/5**, actionability **4.10/5**, safety/privacy **5.00/5**, clarity **4.55/5**.
+**10/20** đạt semantic gate đặt trước lượt chấm. Hai gate khác nhau; đây không
+phải bằng chứng RAG đã tốt lên/kém đi. Core và artifacts cũ được giữ nguyên.
+Lượt mới chưa có human calibration; các policy flags của judge cần được đọc
+cùng evidence, không tự coi là lỗi nghiêm trọng đã xác nhận.
+
 - [Worksheet hoàn chỉnh](exercises.md): benchmark, rubric và hai bonus.
 - [Reflection](reflection.md): ba 5 Whys, clusters, improvement log và CI/CD strategy.
+- [Semantic re-evaluation](artifacts/semantic_evaluation.md): đủ 20 cases,
+  năm tiêu chí 1–5, reasons, citations và đối chiếu với core.
 - [Artifacts](artifacts/): baseline answers, core benchmark, framework comparison,
   independent rubric judge và reranking measurements.
 
@@ -34,6 +44,21 @@ uv pip sync --python .venv/bin/python requirements.lock
 comparison nếu inputs thay đổi. `JUDGE_MODEL=gpt-5.6-luna`; không tự fallback
 model. Scripts gọi Responses API để hỗ trợ structured output của judge.
 Core overlap evaluation không gọi LLM. CI chạy offline, không cần API key.
+
+Chấm semantic hoặc dựng lại báo cáo:
+
+```bash
+.venv/bin/python evaluate_semantic.py
+```
+
+Script resume theo hash golden/actual/corpus/model/protocol; khi đủ 20 kết quả
+hợp lệ, lệnh chỉ dựng lại report, không gọi API. Để chạy experiment khác,
+dùng `--output` và `--report` mới; không ghi đè artifact baseline. Lượt đầu
+thực tế cũng là smoke test model/schema; nếu lỗi, dừng trước full run, không
+tự đổi model. Điểm/lý do dùng Structured Outputs qua `responses.parse` theo
+[OpenAI documentation](https://developers.openai.com/api/docs/guides/structured-outputs).
+Schema không bảo đảm judge suy luận đúng; script còn kiểm tra quotation và
+giữ lỗi retry, nhưng human calibration vẫn là bước cần làm sau.
 
 Dependency lock ghi toàn bộ phiên bản; pin LangChain 0.3 để tương thích imports
 của RAGAS 0.4.3. Reflection là bản phân tích evidence cần người nộp review,

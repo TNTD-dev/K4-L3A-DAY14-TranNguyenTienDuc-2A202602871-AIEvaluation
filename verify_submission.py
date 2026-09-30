@@ -4,9 +4,11 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+from argparse import Namespace
 from collections import Counter
 from pathlib import Path
 from template import RAGASEvaluator, rerank_by_overlap
+from evaluate_semantic import Verdict, assess, prepare_inputs, summarize
 
 
 def read(name: str) -> dict:
@@ -20,6 +22,7 @@ def main() -> None:
     comparison = read("artifacts/framework_comparison.json")
     ranking = read("artifacts/reranking_results.json")
     judge = read("artifacts/rubric_judge.json")
+    semantic = read("artifacts/semantic_evaluation.json")
     ids = {p["id"] for p in golden["qa_pairs"]}
     assert len(ids) == 20
     assert Path("template.py").read_bytes() == Path("solution/solution.py").read_bytes()
@@ -28,10 +31,30 @@ def main() -> None:
         (benchmark, "results"),
         (ranking, "results"),
         (judge, "results"),
+        (semantic, "results"),
     ):
         assert len(artifact[key]) == 20 and {r["id"] for r in artifact[key]} == ids
     assert actual["agent"]["model"] == "gpt-4o-mini" and actual["agent"]["top_k"] == 5
     assert judge["model"] == comparison["judge_model"] == "gpt-5.6-luna"
+    assert semantic["provenance"]["judge_model"] == "gpt-5.6-luna"
+    header, _, evidence = prepare_inputs(
+        Namespace(
+            golden=Path("golden_dataset.json"),
+            actual=Path("artifacts/actual_answers.json"),
+            corpus=Path("data/technology_store"),
+            model="gpt-5.6-luna",
+        )
+    )
+    assert semantic["input_hash"] == header["input_hash"]
+    assert semantic["provenance"] == header["provenance"]
+    assert semantic["protocol"] == header["protocol"]
+    for row in semantic["results"]:
+        assert row["status"] == "scored" and row["error"] is None
+        verdict = Verdict.model_validate(row["verdict"])
+        assert json.loads(row["raw_output"]) == row["verdict"]
+        assert row["assessment"] == assess(verdict, evidence)
+    assert semantic["complete"]
+    assert semantic["summary"] == summarize(semantic["results"])
     assert comparison["embedding_model"] == "text-embedding-3-small"
     assert (
         benchmark["provenance"]["golden_sha256"]
@@ -125,7 +148,7 @@ def main() -> None:
             abs_tol=1e-12,
         )
     print(
-        "PASS: 20 answers, benchmark, rubric judge, reranking and 160 framework outcomes verified (3 explicit RAGAS N/A)."
+        "PASS: 20 answers, core benchmark, original rubric, semantic re-evaluation, reranking and 160 framework outcomes verified (3 explicit RAGAS N/A)."
     )
 
 
