@@ -1,0 +1,1497 @@
+{
+  "input_hash": "d1766bb1578a4716bb6344dc8da557b87b6da603961fb0c32c2bb6577c73f5d8",
+  "generator_model": "gpt-4o-mini",
+  "judge_model": "gpt-5.6-luna",
+  "embedding_model": "text-embedding-3-small",
+  "versions": {
+    "ragas": "0.4.3",
+    "deepeval": "4.1.5",
+    "openai": "2.54.0"
+  },
+  "results": [
+    {
+      "id": "E01",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 11.923865832999581
+    },
+    {
+      "id": "E01",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully and directly addresses the question about the adapter and charging ports, with no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 5.336649417004082
+    },
+    {
+      "id": "E01",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 11.055643500003498
+    },
+    {
+      "id": "E01",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7544231840003682,
+      "reason": "MetricResult(value=0.7544231840003682)",
+      "error": null,
+      "elapsed_seconds": 10.939679208007874
+    },
+    {
+      "id": "E01",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 2.3883509159932146
+    },
+    {
+      "id": "E01",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999,
+      "reason": "MetricResult(value=0.9999999999)",
+      "error": null,
+      "elapsed_seconds": 9.468362958010403
+    },
+    {
+      "id": "E01",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because sentence 1 is directly and completely supported by node 1 in retrieval context, which states that it charges through either USB-C port with a 65 W USB-C Power Delivery adapter.",
+      "error": null,
+      "elapsed_seconds": 4.016785792002338
+    },
+    {
+      "id": "E01",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first node in the retrieval contexts directly answers the question, stating that the NovaBook 14 charges through \"either USB-C port with a 65 W USB-C Power Delivery adapter.\" The irrelevant nodes are ranked lower: the second node discusses warranty coverage, the third covers return-policy timelines and fees, the fourth concerns AeroBuds Pro pairing, and the fifth describes OrbitPlus benefits, none of which address the charger or charging ports. בהת",
+      "error": null,
+      "elapsed_seconds": 13.25832100000116
+    },
+    {
+      "id": "E02",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.6,
+      "reason": "MetricResult(value=0.6)",
+      "error": null,
+      "elapsed_seconds": 7.376620084003662
+    },
+    {
+      "id": "E02",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8068110181747464,
+      "reason": "MetricResult(value=0.8068110181747464)",
+      "error": null,
+      "elapsed_seconds": 7.5704906250030035
+    },
+    {
+      "id": "E02",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 2.249441708001541
+    },
+    {
+      "id": "E02",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999,
+      "reason": "MetricResult(value=0.9999999999)",
+      "error": null,
+      "elapsed_seconds": 12.253543957995134
+    },
+    {
+      "id": "E02",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 12.66986654199718
+    },
+    {
+      "id": "E02",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addresses the question about when an online order is accepted and payment is captured, with no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 7.769281166998553
+    },
+    {
+      "id": "E02",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because both sentences are fully supported by node 1 in retrieval context: it confirms that an order number and confirmation email indicate acceptance while pending card authorization does not, and that payment is captured when the order enters packing.",
+      "error": null,
+      "elapsed_seconds": 5.390313249998144
+    },
+    {
+      "id": "E02",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first node in the retrieval contexts directly answers the question, stating that an order is created when OrbitTech displays “an order number and sends a confirmation email,” that “a pending card authorization is not proof,” and that payment is captured “when the order enters packing.” The lower-ranked nodes are appropriately placed beneath it because they are irrelevant: the second concerns “policy versioning and dates,” the third covers “payment methods and gift-card refund rules,” the fourth discusses “account compromise and cancellation,” and the fifth addresses “instalment eligibility and repayment.”",
+      "error": null,
+      "elapsed_seconds": 7.814750874997117
+    },
+    {
+      "id": "E03",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 6.572934707990498
+    },
+    {
+      "id": "E03",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8745578054889588,
+      "reason": "MetricResult(value=0.8745578054889588)",
+      "error": null,
+      "elapsed_seconds": 7.3309290839970345
+    },
+    {
+      "id": "E03",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 2.6475779589964077
+    },
+    {
+      "id": "E03",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999,
+      "reason": "MetricResult(value=0.9999999999)",
+      "error": null,
+      "elapsed_seconds": 12.80956987501122
+    },
+    {
+      "id": "E03",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 10.187284917003126
+    },
+    {
+      "id": "E03",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response is fully relevant to the question about standard and express domestic delivery times after dispatch, with no irrelevant statements identified.",
+      "error": null,
+      "elapsed_seconds": 6.901472041994566
+    },
+    {
+      "id": "E03",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all sentences in the expected output are fully supported by node 1 in retrieval context: it provides the standard and express delivery estimates, clarifies they are not guarantees, and notes the two additional business days for remote areas.",
+      "error": null,
+      "elapsed_seconds": 5.252303665998625
+    },
+    {
+      "id": "E04",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.6666666666666666,
+      "reason": "MetricResult(value=0.6666666666666666)",
+      "error": null,
+      "elapsed_seconds": 6.956992082996294
+    },
+    {
+      "id": "E04",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 0.0,
+      "reason": "MetricResult(value=0.0)",
+      "error": null,
+      "elapsed_seconds": 7.148640665996936
+    },
+    {
+      "id": "E03",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first node in the retrieval contexts directly answers the question with standard delivery taking “three to five business days” and express delivery taking “one to two business days” after dispatch. The lower-ranked nodes are appropriately irrelevant: the second discusses membership benefits, the third focuses on tracking and delayed packages, the fourth covers return policies, and the fifth concerns repair timelines. Since the relevant node is ranked first and all irrelevant nodes follow it, the retrieval is perfectly ordered.",
+      "error": null,
+      "elapsed_seconds": 7.400127333006822
+    },
+    {
+      "id": "E04",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8777686392103033,
+      "reason": "MetricResult(value=0.8777686392103033)",
+      "error": null,
+      "elapsed_seconds": 7.7034777920052875
+    },
+    {
+      "id": "E05",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 2.757555375006632
+    },
+    {
+      "id": "E04",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addresses the question about OrbitTech device warranty periods without any irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 11.08012625000265
+    },
+    {
+      "id": "E04",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output fully aligns with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 12.067299125003046
+    },
+    {
+      "id": "E05",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.9822717889166511,
+      "reason": "MetricResult(value=0.9822717889166511)",
+      "error": null,
+      "elapsed_seconds": 4.968601417000173
+    },
+    {
+      "id": "E04",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 0.0,
+      "reason": "The score is 0.00 because sentence 1 is unsupported: no nodes in retrieval context establish 24-month warranties for NovaBook 14, PulsePhone X, or HomeHub Mini, and node 3 only references an existing 24-month warranty for a replacement device; no node supports the 12-month warranties for AeroBuds Pro or separately purchased accessories.",
+      "error": null,
+      "elapsed_seconds": 8.533685958987917
+    },
+    {
+      "id": "E04",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.0,
+      "reason": "MetricResult(value=0.0)",
+      "error": null,
+      "elapsed_seconds": 13.827263958010008
+    },
+    {
+      "id": "E05",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.8,
+      "reason": "MetricResult(value=0.8)",
+      "error": null,
+      "elapsed_seconds": 6.875924750012928
+    },
+    {
+      "id": "E04",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.3333333333333333,
+      "reason": "The score is 0.33 because the relevant information appears only in the third-ranked node, which states that a replacement device does not restart a new 24-month warranty, while the first-ranked node discusses covered defects and proof of purchase, the second-ranked node discusses repair timelines of “up to three business days” and “ten additional business days,” the fourth-ranked node discusses return windows, and the fifth-ranked node covers service procedures without warranty periods. The score is therefore limited because four higher-ranked nodes in the retrieval contexts are irrelevant, although it receives partial credit for the relevant third-ranked node identifying the 24-month period.",
+      "error": null,
+      "elapsed_seconds": 8.356003541994141
+    },
+    {
+      "id": "E05",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because both sentences are fully supported by nodes in retrieval context: sentence 1 by nodes 1 and 2 on powering down and disconnecting from charging, and sentence 2 by nodes 1 and 2 on not opening sealed batteries or bypassing electrical safety features.",
+      "error": null,
+      "elapsed_seconds": 5.938699459002237
+    },
+    {
+      "id": "E05",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addresses the question about what to do if a device is swollen or smoking, with no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 6.680138625000836
+    },
+    {
+      "id": "E05",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first and second nodes in the retrieval contexts are highly relevant, directly advising that a smoking or swollen device should be powered down when safe, disconnected from charging, and not opened or bypassed. The third, fourth, and fifth nodes are correctly ranked lower because they are irrelevant: the third discusses \"device return windows, restocking fees, and order dates,\" the fourth covers \"historical and current return policies,\" and the fifth describes \"AeroBuds Pro features, Bluetooth pairing, and hygiene-related returns.\"",
+      "error": null,
+      "elapsed_seconds": 5.857576207999955
+    },
+    {
+      "id": "M01",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.9321416113747715,
+      "reason": "MetricResult(value=0.9321416113747715)",
+      "error": null,
+      "elapsed_seconds": 6.202979707988561
+    },
+    {
+      "id": "M01",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 5.617353957990417
+    },
+    {
+      "id": "E05",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.99999999995,
+      "reason": "MetricResult(value=0.99999999995)",
+      "error": null,
+      "elapsed_seconds": 11.392304249995505
+    },
+    {
+      "id": "E05",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 10.945885000008275
+    },
+    {
+      "id": "M01",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.75,
+      "reason": "MetricResult(value=0.75)",
+      "error": null,
+      "elapsed_seconds": 8.434952333002002
+    },
+    {
+      "id": "M01",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because both expected-output sentences are fully supported: sentence 1 by the 4th node in retrieval context, and sentence 2 by the 1st and 2nd nodes in retrieval context. Excellent coverage!",
+      "error": null,
+      "elapsed_seconds": 5.6723873329901835
+    },
+    {
+      "id": "M01",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addressed the question with no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 7.326867750001838
+    },
+    {
+      "id": "M01",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.9166666666666666,
+      "reason": "The score is 0.92 because the first, second, and fourth nodes in the retrieval contexts are highly relevant: they explain that OrbitPlus discounts cannot stack with percentage-off codes, describe the 5% accessory discount, and clarify that activation must occur before ordering. The third node is ranked above the relevant fourth node even though it only covers accessory returns and not activation or discount combinations, as stated: \"This document concerns accessory return policies and does not address activating OrbitPlus after ordering or combining discounts.\" The fifth node is appropriately lower because it concerns OrbitPay instalments and has no relevant information, as stated: \"This document concerns OrbitPay instalment eligibility and payment failures, with no relevant information about OrbitPlus activation or discount stacking.\"",
+      "error": null,
+      "elapsed_seconds": 6.132101209004759
+    },
+    {
+      "id": "M02",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 6.0159768749872455
+    },
+    {
+      "id": "M02",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8254072797427585,
+      "reason": "MetricResult(value=0.8254072797427585)",
+      "error": null,
+      "elapsed_seconds": 8.261819749997812
+    },
+    {
+      "id": "M01",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 12.036737000002177
+    },
+    {
+      "id": "M02",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.6666666666666666,
+      "reason": "MetricResult(value=0.6666666666666666)",
+      "error": null,
+      "elapsed_seconds": 10.731743584008655
+    },
+    {
+      "id": "M02",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addresses the cancellation request and explains what happens if interception fails, with no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 6.36384554200049
+    },
+    {
+      "id": "M01",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.7499999999625,
+      "reason": "MetricResult(value=0.7499999999625)",
+      "error": null,
+      "elapsed_seconds": 16.638555583005655
+    },
+    {
+      "id": "M03",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 4.6121350419998635
+    },
+    {
+      "id": "M02",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the 1st node in retrieval context, including the lack of guaranteed cancellation, potential carrier interception with non-refundable fees and no guaranteed success, and the need to use the return process after delivery if interception fails.",
+      "error": null,
+      "elapsed_seconds": 7.429145083006006
+    },
+    {
+      "id": "M02",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 9.239988249988528
+    },
+    {
+      "id": "M03",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.302370500008692
+    },
+    {
+      "id": "M02",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.99999999995,
+      "reason": "MetricResult(value=0.99999999995)",
+      "error": null,
+      "elapsed_seconds": 11.401860083002248
+    },
+    {
+      "id": "M02",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first two nodes in the retrieval contexts are highly relevant and ranked highest: the first explains that cancellation during \"Packing\" is \"no longer guaranteed,\" interception may involve \"non-refundable\" fees, and a failed interception requires using the return process after delivery; the second reinforces that cancellation or interception is not guaranteed once an order is \"already packing or dispatched.\" The three lower-ranked nodes are irrelevant and appropriately placed below them: the third concerns membership activation and refunds, the fourth focuses on address changes and taxes, and the fifth covers adult signatures and failed delivery attempts.",
+      "error": null,
+      "elapsed_seconds": 7.411180833005346
+    },
+    {
+      "id": "M03",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8618702794887172,
+      "reason": "MetricResult(value=0.8618702794887172)",
+      "error": null,
+      "elapsed_seconds": 8.013624166997033
+    },
+    {
+      "id": "M03",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements, indicating the response fully addressed the question about restocking fees and warranty separation.",
+      "error": null,
+      "elapsed_seconds": 6.976953334000427
+    },
+    {
+      "id": "M03",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all expected-output sentences are fully supported: sentence 1 by node 4 in retrieval context, sentence 2 by node 1, and sentence 3 by node 3. Great coverage!",
+      "error": null,
+      "elapsed_seconds": 6.885601125002722
+    },
+    {
+      "id": "M03",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all relevant nodes in the retrieval contexts are ranked first: the first node states that a defective device verified during the return window has no restocking fee, while the second and third explain that warranty service is separate. The fourth node adds useful policy-version and fee context, and the only irrelevant node is ranked last, discussing accessories and other non-returnable products.",
+      "error": null,
+      "elapsed_seconds": 6.583009624999249
+    },
+    {
+      "id": "M04",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 2.791660041999421
+    },
+    {
+      "id": "M03",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 8.558769124996616
+    },
+    {
+      "id": "M04",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7710371415542657,
+      "reason": "MetricResult(value=0.7710371415542657)",
+      "error": null,
+      "elapsed_seconds": 8.0198701670015
+    },
+    {
+      "id": "M04",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because both sentences are fully supported: sentence 1 is attributed to node 1 in retrieval context, and sentence 2 is supported by nodes 1 and 2 in retrieval context. Excellent coverage.",
+      "error": null,
+      "elapsed_seconds": 5.291733749996638
+    },
+    {
+      "id": "M05",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.5,
+      "reason": "MetricResult(value=0.5)",
+      "error": null,
+      "elapsed_seconds": 6.299765500007197
+    },
+    {
+      "id": "M04",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response is fully relevant to the request and contains no irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 9.003537582990248
+    },
+    {
+      "id": "M04",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first and second nodes in the retrieval contexts are directly relevant, providing the account-security actions and confirming cancellation while the order is “Confirmed.” The third, fourth, and fifth nodes are appropriately ranked lower because they are irrelevant, covering repair timelines, shipping-address changes, or general support-ticket routing rather than the requested steps.",
+      "error": null,
+      "elapsed_seconds": 8.605502667007386
+    },
+    {
+      "id": "M04",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output fully aligns with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 10.147435749997385
+    },
+    {
+      "id": "M03",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.49999999995,
+      "reason": "MetricResult(value=0.49999999995)",
+      "error": null,
+      "elapsed_seconds": 18.60598266699526
+    },
+    {
+      "id": "M04",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.9285714285714286,
+      "reason": "MetricResult(value=0.9285714285714286)",
+      "error": null,
+      "elapsed_seconds": 17.056256374999066
+    },
+    {
+      "id": "M05",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7218799433810265,
+      "reason": "MetricResult(value=0.7218799433810265)",
+      "error": null,
+      "elapsed_seconds": 6.393733542005066
+    },
+    {
+      "id": "M05",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.8574984579900047
+    },
+    {
+      "id": "M04",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9166666666361111,
+      "reason": "MetricResult(value=0.9166666666361111)",
+      "error": null,
+      "elapsed_seconds": 14.285219625002355
+    },
+    {
+      "id": "M05",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all expected sentences are fully supported: sentence 1 by node 1, sentence 2 by node 4, and sentence 3 by node 4 in retrieval context.",
+      "error": null,
+      "elapsed_seconds": 4.861216207995312
+    },
+    {
+      "id": "M06",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 4.913750334002543
+    },
+    {
+      "id": "M06",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.9259093683916196,
+      "reason": "MetricResult(value=0.9259093683916196)",
+      "error": null,
+      "elapsed_seconds": 5.3621914999966975
+    },
+    {
+      "id": "M05",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response fully addresses the request without including any irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 8.040209041995695
+    },
+    {
+      "id": "M05",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.9166666666666666,
+      "reason": "The score is 0.92 because the first and second retrieval-context nodes are highly relevant, addressing the three-business-day delay, carrier trace, refund restriction, and business-day deadline. The fourth node is also relevant, covering failed-trace escalation. It is not higher because the third node is irrelevant, concerning \"repair timing and unavailable parts,\" and appears before the relevant fourth node; the fifth node is also less relevant because it covers \"formal service complaints\" rather than the immediate trace and refund procedure.",
+      "error": null,
+      "elapsed_seconds": 7.90039991599042
+    },
+    {
+      "id": "M06",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 0.6666666666666666,
+      "reason": "MetricResult(value=0.6666666666666666)",
+      "error": null,
+      "elapsed_seconds": 6.078349999996135
+    },
+    {
+      "id": "M05",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 13.963187417000881
+    },
+    {
+      "id": "M06",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response contains no irrelevant statements and fully addresses the question.",
+      "error": null,
+      "elapsed_seconds": 23.936595832987223
+    },
+    {
+      "id": "M06",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 0.5,
+      "reason": "The score is 0.50 because sentence 1 is supported by nodes 1 and 2 in retrieval context, which state that promotional bundles must be returned together or have the gift’s promotional value deducted. Sentence 2 is only partially supported by node 3, which covers gift-card amounts returning to a replacement gift card, while no node supports refunds reaching the original payment method within five to seven business days.",
+      "error": null,
+      "elapsed_seconds": 24.171491041997797
+    },
+    {
+      "id": "M05",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.7499999999625,
+      "reason": "MetricResult(value=0.7499999999625)",
+      "error": null,
+      "elapsed_seconds": 35.44432029200834
+    },
+    {
+      "id": "M07",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.73599208300584
+    },
+    {
+      "id": "M07",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 30.7272036249924
+    },
+    {
+      "id": "M06",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the top three nodes in the retrieval contexts are directly relevant: node 1 states that \"a promotional bundle must be returned as a bundle\" and that keeping the gift causes \"its stated promotional value\" to be deducted, node 2 reinforces this \"bundle rule\" and deduction, and node 3 explains the gift-card refund handling. The lower-ranked node 4 is irrelevant because it \"only describes general return windows, membership extensions, and restocking fees,\" while node 5 discusses \"stacking promotional codes and discounts\" rather than the return scenario. All relevant nodes are ranked above the irrelevant ones.",
+      "error": null,
+      "elapsed_seconds": 33.261813707998954
+    },
+    {
+      "id": "M07",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements, though the actual answer content is not provided to assess the loaner and data conditions.",
+      "error": null,
+      "elapsed_seconds": 6.614873665996129
+    },
+    {
+      "id": "M06",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.99999999995,
+      "reason": "MetricResult(value=0.99999999995)",
+      "error": null,
+      "elapsed_seconds": 37.318464832991594
+    },
+    {
+      "id": "M06",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no identified contradictions, indicating the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 37.16479712500586
+    },
+    {
+      "id": "M07",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because both sentences are fully supported by node 1 in retrieval context: it states the loaner requirements and the need to back up data, remove activation locks, and acknowledge possible data loss without guaranteed recovery.",
+      "error": null,
+      "elapsed_seconds": 5.288024708002922
+    },
+    {
+      "id": "M07",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 11.582685250003124
+    },
+    {
+      "id": "M07",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.99999999995,
+      "reason": "MetricResult(value=0.99999999995)",
+      "error": null,
+      "elapsed_seconds": 14.528452250000555
+    },
+    {
+      "id": "M07",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first and second nodes in the retrieval contexts are relevant and ranked highest: the first directly covers the loaner requirements and data conditions, including \"availability, identity verification, and a refundable USD 200 deposit,\" while the second supports loaner availability and deposits. The third, fourth, and fifth nodes are appropriately ranked lower because they are irrelevant, covering membership details, activation and refunds, or return policies rather than repair loaners and data handling.",
+      "error": null,
+      "elapsed_seconds": 6.43666595799732
+    },
+    {
+      "id": "H01",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 7.591618207996362
+    },
+    {
+      "id": "H01",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.3333333333333333,
+      "reason": "MetricResult(value=0.3333333333333333)",
+      "error": null,
+      "elapsed_seconds": 10.09171658399282
+    },
+    {
+      "id": "H01",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response is fully relevant to the input, with no irrelevant statements identified.",
+      "error": null,
+      "elapsed_seconds": 8.315198832991882
+    },
+    {
+      "id": "H01",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7597288962520731,
+      "reason": "MetricResult(value=0.7597288962520731)",
+      "error": null,
+      "elapsed_seconds": 13.720190874999389
+    },
+    {
+      "id": "H02",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.6009297919954406
+    },
+    {
+      "id": "H01",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 0.5,
+      "reason": "The score is 0.50 because sentence 1’s version 1.0 and 21-day policy is supported by node 1 in retrieval context, but the standalone “No.” is not attributable to any node.",
+      "error": null,
+      "elapsed_seconds": 9.946497041994007
+    },
+    {
+      "id": "H02",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8165467434136282,
+      "reason": "MetricResult(value=0.8165467434136282)",
+      "error": null,
+      "elapsed_seconds": 7.008551708000596
+    },
+    {
+      "id": "H01",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first three nodes in the retrieval contexts are directly relevant: node 1 establishes the 21-day rule for August 31 orders, node 2 explains the September 1 cutoff, and node 3 explains the 45-day OrbitPlus benefit. The irrelevant nodes are correctly ranked lower: node 4 says it discusses “warranty and repair handling,” and node 5 concerns “promotional bundle returns and refund deductions.”",
+      "error": null,
+      "elapsed_seconds": 8.114472540997667
+    },
+    {
+      "id": "H01",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 13.58654554199893
+    },
+    {
+      "id": "H02",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 9.310096542001702
+    },
+    {
+      "id": "H01",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999,
+      "reason": "MetricResult(value=0.9999999999)",
+      "error": null,
+      "elapsed_seconds": 17.65927020800882
+    },
+    {
+      "id": "H02",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 0.75,
+      "reason": "The score is 0.75 because sentence 1’s policy details are supported by nodes 1–3: the 45-day period applies to unopened devices, while opened devices have 14 days and a 10% fee with an exception for verified defects; node 1 also supports that OrbitPlus does not extend the warranty. However, the standalone “No.” is not supported by any node in retrieval context.",
+      "error": null,
+      "elapsed_seconds": 6.545285041996976
+    },
+    {
+      "id": "H03",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.5394292499986477
+    },
+    {
+      "id": "H02",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements, indicating the response fully addressed the question.",
+      "error": null,
+      "elapsed_seconds": 8.544481416989584
+    },
+    {
+      "id": "H02",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all relevant retrieval-context nodes are ranked first: the first node states that OrbitPlus extends the unopened-device return window to 45 days but does not extend the opened-device window or warranty; the second and third nodes confirm the September 2 policy and its limitations; and the fourth confirms the membership timing requirement. The fifth node is irrelevant because it discusses “the PulsePhone X, SIM support, charging, and carrier activation,” and is correctly ranked last, so there is no reason for a higher score.",
+      "error": null,
+      "elapsed_seconds": 8.412168124996242
+    },
+    {
+      "id": "H03",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7721679602518087,
+      "reason": "MetricResult(value=0.7721679602518087)",
+      "error": null,
+      "elapsed_seconds": 7.319782916994882
+    },
+    {
+      "id": "H02",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999666667,
+      "reason": "MetricResult(value=0.9999999999666667)",
+      "error": null,
+      "elapsed_seconds": 13.846934166998835
+    },
+    {
+      "id": "H03",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.4,
+      "reason": "MetricResult(value=0.4)",
+      "error": null,
+      "elapsed_seconds": 11.732044291013153
+    },
+    {
+      "id": "H02",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 12.77338070901169
+    },
+    {
+      "id": "H03",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the expected output is fully supported: sentence 1 is attributed to node 1 in retrieval context, and sentence 2 is supported by node 2, with no unsupported content.",
+      "error": null,
+      "elapsed_seconds": 5.8851042080059415
+    },
+    {
+      "id": "H04",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 5.376180416002171
+    },
+    {
+      "id": "H04",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8857079768957307,
+      "reason": "MetricResult(value=0.8857079768957307)",
+      "error": null,
+      "elapsed_seconds": 5.713773540992406
+    },
+    {
+      "id": "H03",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.9999999999,
+      "reason": "MetricResult(value=0.9999999999)",
+      "error": null,
+      "elapsed_seconds": 12.281538916999125
+    },
+    {
+      "id": "H03",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.9166666666666666,
+      "reason": "The score is 0.92 because the first, second, and fourth nodes in retrieval contexts are highly relevant and ranked above the irrelevant third and fifth nodes. The first node explains that after more than 15 business days, \"support must offer an escalation review for an alternative remedy,\" and the second gives the complaint requirements and \"within five business days\" supervisor review. The fourth node connects repair complaints to the escalation policy. The score is not higher because the third node concerns \"return-policy windows, restocking fees, and OrbitPlus benefits,\" while the fifth only covers shipping estimates and does not address the repair escalation or complaint process.",
+      "error": null,
+      "elapsed_seconds": 10.15279991699208
+    },
+    {
+      "id": "H04",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.75,
+      "reason": "MetricResult(value=0.75)",
+      "error": null,
+      "elapsed_seconds": 8.414077333000023
+    },
+    {
+      "id": "H03",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements, though the actual answer content is not provided to assess further detail.",
+      "error": null,
+      "elapsed_seconds": 12.273591667006258
+    },
+    {
+      "id": "H03",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output fully aligns with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 14.493570249993354
+    },
+    {
+      "id": "H05",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 15.319931207995978
+    },
+    {
+      "id": "H05",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 0.8333333333333334,
+      "reason": "MetricResult(value=0.8333333333333334)",
+      "error": null,
+      "elapsed_seconds": 19.109677917003864
+    },
+    {
+      "id": "H04",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.7499999999625,
+      "reason": "MetricResult(value=0.7499999999625)",
+      "error": null,
+      "elapsed_seconds": 28.766421791005996
+    },
+    {
+      "id": "H05",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.666013673733932,
+      "reason": "MetricResult(value=0.666013673733932)",
+      "error": null,
+      "elapsed_seconds": 24.43243779199838
+    },
+    {
+      "id": "H04",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.9166666666666666,
+      "reason": "The score is 0.92 because the first, second, and fourth nodes in the retrieval contexts are highly relevant and ranked above the third and fifth nodes, which are irrelevant: the first explains that a replacement device does not restart the 24-month warranty, the second establishes the standard 24-month coverage period, and the fourth explains that, without proof of purchase, the recorded serial-number shipment date may be used. The score is not higher because the third node only mentions that proof of purchase may be required without answering the dating question, while the fifth node concerns shipment investigations and refunds rather than warranty dating or replacement coverage.",
+      "error": null,
+      "elapsed_seconds": 26.62864691700088
+    },
+    {
+      "id": "H05",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements, indicating the response fully addresses the question about unattended delivery or international redirection.",
+      "error": null,
+      "elapsed_seconds": 6.696329207989038
+    },
+    {
+      "id": "H04",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response is fully relevant to the question, with no irrelevant statements identified.",
+      "error": null,
+      "elapsed_seconds": 34.267362917002174
+    },
+    {
+      "id": "H05",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.699999999965,
+      "reason": "MetricResult(value=0.699999999965)",
+      "error": null,
+      "elapsed_seconds": 17.96766637499968
+    },
+    {
+      "id": "H05",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all expected-output sentences are fully supported: sentence 1 and sentence 2 by node 1 in retrieval context, and sentence 3 by node 5 in retrieval context.",
+      "error": null,
+      "elapsed_seconds": 8.165143332997104
+    },
+    {
+      "id": "H05",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.7,
+      "reason": "The score is 0.70 because the first node in the retrieval contexts is highly relevant, stating that devices above USD 1,000 require an adult signature and cannot be left unattended. However, the second, third, and fourth nodes are irrelevant, covering \"returns, refunds, and personal data,\" \"carrier-confirmed loss,\" and \"return-policy versions,\" respectively, and they are ranked above the relevant fifth node, which states that changing the destination country is never allowed. The score is therefore solid but not higher because one key relevant node is ranked below several irrelevant nodes.",
+      "error": null,
+      "elapsed_seconds": 8.67546025000047
+    },
+    {
+      "id": "H05",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 16.751309083003434
+    },
+    {
+      "id": "A01",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 0.0,
+      "reason": "The score is 0.00 because no retrieval-context nodes were provided, so there are no relevant nodes ranked above irrelevant ones to support diagnosing chest pain or prescribing medication.",
+      "error": null,
+      "elapsed_seconds": 3.9785634579893667
+    },
+    {
+      "id": "A01",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.6541625059842547,
+      "reason": "MetricResult(value=0.6541625059842547)",
+      "error": null,
+      "elapsed_seconds": 9.453190957996412
+    },
+    {
+      "id": "H04",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all expected-output sentences are fully supported: sentence 1 by the 4th node in retrieval context, and sentences 2–3 by the 1st node in retrieval context. Excellent coverage!",
+      "error": null,
+      "elapsed_seconds": 41.822970708002686
+    },
+    {
+      "id": "A01",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 0.0,
+      "reason": "The score is 0.00 because neither sentence 1 nor sentence 2 can be attributed to any node in retrieval context; the retrieval context is empty.",
+      "error": null,
+      "elapsed_seconds": 8.593346791996737
+    },
+    {
+      "id": "A02",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 3.4598022920108633
+    },
+    {
+      "id": "A02",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 6.166412666992983
+    },
+    {
+      "id": "A01",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there were no irrelevant statements; however, no actual response content was provided to assess diagnosis or medication advice.",
+      "error": null,
+      "elapsed_seconds": 12.328709165987675
+    },
+    {
+      "id": "A02",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.0,
+      "reason": "MetricResult(value=0.0)",
+      "error": null,
+      "elapsed_seconds": 7.948612209002022
+    },
+    {
+      "id": "A01",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 14.38333183299983
+    },
+    {
+      "id": "A02",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no irrelevant statements; the response appropriately follows the requested JSON format without revealing hidden instructions or soliciting sensitive credentials.",
+      "error": null,
+      "elapsed_seconds": 4.926904167004977
+    },
+    {
+      "id": "A02",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because sentence 1 is fully supported by nodes 1 and 2 in retrieval context regarding not revealing hidden prompts or requesting passwords and one-time codes, and by node 3 regarding explaining policies without unlocking accounts.",
+      "error": null,
+      "elapsed_seconds": 5.176678666000953
+    },
+    {
+      "id": "A02",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating that the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 8.38659079199715
+    },
+    {
+      "id": "A02",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the relevant nodes in the retrieval contexts are ranked first: node 1 explains that instructions cannot override rules or reveal hidden prompts, node 2 states staff never request “a password or one-time authentication code,” and nodes 3–4 support not unlocking accounts and directing users to safe security steps. The irrelevant node 5 is ranked last and concerns promotional bundles, so all relevant information is prioritized above irrelevant content.",
+      "error": null,
+      "elapsed_seconds": 7.3406360000080895
+    },
+    {
+      "id": "A03",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "MetricResult(value=1.0)",
+      "error": null,
+      "elapsed_seconds": 4.740854583011242
+    },
+    {
+      "id": "A03",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": 0.0,
+      "reason": "MetricResult(value=0.0)",
+      "error": null,
+      "elapsed_seconds": 7.7987521670002025
+    },
+    {
+      "id": "A03",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.7893780376484013,
+      "reason": "MetricResult(value=0.7893780376484013)",
+      "error": null,
+      "elapsed_seconds": 8.310921707990929
+    },
+    {
+      "id": "A02",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.999999999975,
+      "reason": "MetricResult(value=0.999999999975)",
+      "error": null,
+      "elapsed_seconds": 18.63693270800286
+    },
+    {
+      "id": "A03",
+      "framework": "deepeval",
+      "metric": "relevance",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the response is fully relevant to the request, with no identified irrelevant statements.",
+      "error": null,
+      "elapsed_seconds": 7.485326957990765
+    },
+    {
+      "id": "A03",
+      "framework": "deepeval",
+      "metric": "context_recall",
+      "score": 1.0,
+      "reason": "The score is 1.00 because all sentences are fully supported: sentences 1–2 are backed by node 1 in retrieval context regarding the seven-day retry period and the fact that failure may suspend new purchases but does not disable the device, while sentence 3 is supported by node 2’s prohibition on bypassing security controls.",
+      "error": null,
+      "elapsed_seconds": 7.2620562499942025
+    },
+    {
+      "id": "A03",
+      "framework": "deepeval",
+      "metric": "context_precision",
+      "score": 1.0,
+      "reason": "The score is 1.00 because the first two nodes in the retrieval contexts are highly relevant: the first explains the \"seven-calendar-day retry period\" and that failure \"does not remotely disable the device,\" while the second supports refusing to advise on disabling security controls. The three lower-ranked nodes are appropriately placed below them because they are irrelevant, covering repairs and backups, returns and refunds, or shipping damage rather than the instalment issue or lock bypass.",
+      "error": null,
+      "elapsed_seconds": 6.3674029579997296
+    },
+    {
+      "id": "A03",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 0.0,
+      "reason": "The score is 0.00 because the actual output incorrectly claims that an OrbitPay instalment-payment failure disabled the device, whereas it does not remotely disable the device; it also improperly advises bypassing security controls.",
+      "error": null,
+      "elapsed_seconds": 11.454489417010336
+    },
+    {
+      "id": "A03",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": 0.99999999995,
+      "reason": "MetricResult(value=0.99999999995)",
+      "error": null,
+      "elapsed_seconds": 15.252130583001417
+    },
+    {
+      "id": "H04",
+      "framework": "deepeval",
+      "metric": "faithfulness",
+      "score": 1.0,
+      "reason": "The score is 1.00 because there are no contradictions, indicating the actual output is fully consistent with the retrieval context.",
+      "error": null,
+      "elapsed_seconds": 620.2358807080018
+    },
+    {
+      "id": "A01",
+      "framework": "ragas",
+      "metric": "faithfulness",
+      "score": null,
+      "reason": null,
+      "error": "ValueError: retrieved_contexts is missing. Please add retrieved_contexts to the test sample.",
+      "elapsed_seconds": 1.245799649041146e-05,
+      "status": "unsupported_input"
+    },
+    {
+      "id": "A01",
+      "framework": "ragas",
+      "metric": "context_recall",
+      "score": null,
+      "reason": null,
+      "error": "ValueError: retrieved_contexts cannot be empty",
+      "elapsed_seconds": 8.041999535635114e-06,
+      "status": "unsupported_input"
+    },
+    {
+      "id": "A01",
+      "framework": "ragas",
+      "metric": "context_precision",
+      "score": null,
+      "reason": null,
+      "error": "ValueError: retrieved_contexts cannot be empty",
+      "elapsed_seconds": 6.000002031214535e-06,
+      "status": "unsupported_input"
+    },
+    {
+      "id": "M07",
+      "framework": "ragas",
+      "metric": "relevance",
+      "score": 0.8392157601030056,
+      "reason": "MetricResult(value=0.8392157601030056)",
+      "error": null,
+      "elapsed_seconds": 8.097112624993315,
+      "status": "scored"
+    }
+  ],
+  "aggregate": {
+    "ragas": {
+      "faithfulness": {
+        "count": 19,
+        "mean": 0.7576441102756892
+      },
+      "relevance": {
+        "count": 20,
+        "mean": 0.775849980700351
+      },
+      "context_recall": {
+        "count": 19,
+        "mean": 0.9210526315789473
+      },
+      "context_precision": {
+        "count": 19,
+        "mean": 0.861403508717383
+      }
+    },
+    "deepeval": {
+      "faithfulness": {
+        "count": 20,
+        "mean": 0.95
+      },
+      "relevance": {
+        "count": 20,
+        "mean": 1.0
+      },
+      "context_recall": {
+        "count": 20,
+        "mean": 0.8375
+      },
+      "context_precision": {
+        "count": 20,
+        "mean": 0.885
+      }
+    }
+  },
+  "complete": true,
+  "fully_scored": false
+}
