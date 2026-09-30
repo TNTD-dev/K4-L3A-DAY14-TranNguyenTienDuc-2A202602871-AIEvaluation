@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import hashlib
+from importlib.metadata import version
 from pathlib import Path
 from typing import Any
 
@@ -292,6 +294,15 @@ def main() -> int:
             summary,
             FailureAnalyzer(),
         )
+        actual_metadata = _read_json_file(args.actual, "actual")
+        artifact["provenance"] = {
+            "generator": actual_metadata["agent"],
+            "evaluation_method": "deterministic_token_overlap",
+            "judge_model": None,
+            "golden_sha256": hashlib.sha256(args.golden.read_bytes()).hexdigest(),
+            "actual_sha256": hashlib.sha256(args.actual.read_bytes()).hexdigest(),
+            "openai_version": version("openai"),
+        }
         output = args.output.expanduser().resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(

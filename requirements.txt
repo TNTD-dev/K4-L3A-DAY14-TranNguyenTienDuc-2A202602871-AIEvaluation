@@ -1,3 +1,8 @@
 openai>=1.66.0,<3.0.0
 python-dotenv>=1.0.0,<2.0.0
 pytest>=8.0.0,<10.0.0
+ragas==0.4.3
+deepeval==4.1.5
+# RAGAS 0.4.3 imports the pre-1.0 LangChain VertexAI module.
+langchain-community==0.3.31
+langchain-openai==0.3.35

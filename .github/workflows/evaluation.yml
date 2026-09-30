@@ -1,0 +1,20 @@
+name: Evaluation submission checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline-validation:
+    runs-on: ubuntu-latest
+    env:
+      RAGAS_DO_NOT_TRACK: 'true'
+      DEEPEVAL_TELEMETRY_OPT_OUT: '1'
+      LANGCHAIN_TRACING_V2: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.lock
+      - run: python -m pytest tests/ -v
+      - run: python validate_golden_dataset.py
+      - run: python verify_submission.py
